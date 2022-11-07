@@ -1,9 +1,12 @@
 package br.edu.infnet.orm;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.edu.infnet.orm.modelo.entidade.Cliente;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import br.edu.infnet.orm.modelo.entidade.Contato;
+import br.edu.infnet.orm.modelo.entidade.TipoContato;
+import br.edu.infnet.orm.modelo.persistencia.ClienteDAO;
 
 /**
  * Hello world!
@@ -14,12 +17,27 @@ public class App
     public static void main( String[] args )
     {
         
-    	EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-    	EntityManager em = emf.createEntityManager();
-    	em.getTransaction().begin();
-    	Cliente cliente = new Cliente("jose dos santos");
-    	em.persist(cliente);
-    	em.getTransaction().commit();
+    	ClienteDAO dao = new ClienteDAO();
+    	Cliente cliente = new Cliente("Mg"
+    			+ "anuel Santos");
+    	cliente.setContatos(new ArrayList<>());
+    	cliente.getContatos().add(new Contato(TipoContato.EMAIL, "pjoa@gmail.com"));    	cliente.getContatos().add(new Contato(TipoContato.TELEFONE, "3223235435"));
+    	cliente.getContatos().add(new Contato(TipoContato.TELEFONE, "32324423423"));
+//    	
+		dao.salvar(cliente);
+//    	
+//    	List<Cliente> clientes = dao.listaTodos();
+//    	System.out.println(clientes);
+    	
+//    	
+//    	for (Cliente cliente : clientes) {
+//			System.out.println(cliente.getContatos());
+//		}
+//    	
+    	
+    	
+    	
+    	
     	
     }
 }
