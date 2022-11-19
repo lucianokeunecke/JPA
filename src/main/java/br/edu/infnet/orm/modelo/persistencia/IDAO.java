@@ -4,13 +4,13 @@ import java.util.List;
 
 public interface IDAO<T> {
 
-	void salvar(T t);
+	Boolean incluir(T t);
 
-	void atualizar(T t);
+	void alterar(T t);
 
-	void deletar(T t);
+	void excluir(T t);
 
-	T obter(Long id);
+	T buscarPeloId(Long id);
 
 	List<T> listaTodos();
 

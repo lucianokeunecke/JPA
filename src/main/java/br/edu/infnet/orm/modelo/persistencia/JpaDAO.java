@@ -1,6 +1,7 @@
 package br.edu.infnet.orm.modelo.persistencia;
 
 import java.lang.reflect.ParameterizedType;
+import java.nio.channels.ScatteringByteChannel;
 import java.util.List;
 
 import jakarta.persistence.EntityManager;
@@ -18,28 +19,36 @@ public abstract class JpaDAO<T>  implements IDAO<T>{
 	}
 
 	@Override
-	public void salvar(T t) {
-		em.getTransaction().begin();
-		em.persist(t);
-		em.getTransaction().commit();
+	public Boolean incluir(T t) {
+
+		try {
+			em.getTransaction().begin();
+			em.persist(t);
+			em.getTransaction().commit();
+			return true;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 	@Override
-	public void atualizar(T t) {
+	public void alterar(T t) {
 		em.getTransaction().begin();
 		em.merge(t);
 		em.getTransaction().commit();
 	}
 
 	@Override
-	public void deletar(T t) {
+	public void excluir(T t) {
 		em.getTransaction().begin();
 		em.remove(t);
 		em.getTransaction().commit();
 	}
 
 	@Override
-	public T obter(Long id) {
+	public T buscarPeloId(Long id) {
 		return em.find(entityClass, id);
 	}
 

@@ -1,10 +1,8 @@
 package br.edu.infnet.orm;
 
-import br.edu.infnet.orm.modelo.entidade.Comida;
 import br.edu.infnet.orm.modelo.entidade.Fornecedor;
 import br.edu.infnet.orm.modelo.persistencia.FornecedorDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
-import br.edu.infnet.orm.modelo.persistencia.ProdutoDAO;
 
 /**
  * Hello world!
@@ -61,6 +59,6 @@ public class App {
 		IDAO dao = new FornecedorDAO();
 		Fornecedor fornecedor = new Fornecedor("Luciano Keunecke", "031.897.349-92", "Rua Max Weise", 290, "BL 28 AP 31", "Água Verde", 89032280, "Blumenau");
 
-		dao.salvar(fornecedor);
+		dao.incluir(fornecedor);
 	}
 }
