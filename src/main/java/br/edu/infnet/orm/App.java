@@ -59,10 +59,8 @@ public class App {
 
 
 		IDAO dao = new FornecedorDAO();
-		Fornecedor fornecedor = new Fornecedor("Luciano Keunecke");
+		Fornecedor fornecedor = new Fornecedor("Luciano Keunecke", "031.897.349-92", "Rua Max Weise", 290, "BL 28 AP 31", "Água Verde", 89032280, "Blumenau");
 
 		dao.salvar(fornecedor);
-
-
 	}
 }

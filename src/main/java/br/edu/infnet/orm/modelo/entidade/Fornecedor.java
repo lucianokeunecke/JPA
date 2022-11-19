@@ -9,13 +9,28 @@ import jakarta.persistence.Id;
 public class Fornecedor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
 
-    public Fornecedor(String nome) {
+    private String cnpjCpf;
+    private String endereco;
+    private long numeroEndereco;
+    private String complementoEndereco;
+    private String bairro;
+    private long numeroCep;
+    private String nomeCidade;
+
+    public Fornecedor(String nome, String cnpjCpf, String endereco, long numeroEndereco, String complementoEndereco, String bairro, long numeroCep, String nomeCidade) {
         this.nome = nome;
+        this.cnpjCpf = cnpjCpf;
+        this.endereco = endereco;
+        this.numeroEndereco = numeroEndereco;
+        this.complementoEndereco = complementoEndereco;
+        this.bairro = bairro;
+        this.numeroCep = numeroCep;
+        this.nomeCidade = nomeCidade;
     }
 
 }
