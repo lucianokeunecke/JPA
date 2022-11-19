@@ -52,4 +52,19 @@ public class Fornecedor {
     public Long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Fornecedor{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cnpjCpf='" + cnpjCpf + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", numeroEndereco=" + numeroEndereco +
+                ", complementoEndereco='" + complementoEndereco + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", numeroCep=" + numeroCep +
+                ", nomeCidade='" + nomeCidade + '\'' +
+                '}';
+    }
 }

@@ -38,7 +38,7 @@ public class FornecedorDAOTest {
     }
 
     @Test
-    public void testAlterar() {
+    public void testAlterarPrimeiroRegistro() {
         IDAO fornecedorDAO = new FornecedorDAO();
         List<Fornecedor> listaTodos = fornecedorDAO.listarTodos();
         Fornecedor fornecedor = new Fornecedor( listaTodos.get(0).getId(), "Teste Alteração do Fornecedor", "13.219.981/0001-04", "Teste Alteracao do Endereco", 1234, "Teste Alteracao Complemento", "Teste Alteracao Bairro", 12345678, "Teste Alteracao da Cidade");
@@ -47,7 +47,7 @@ public class FornecedorDAOTest {
     }
 
     @Test
-    public void testExcluir() {
+    public void testExcluirUltimoRegistro() {
         IDAO fornecedorDAO = new FornecedorDAO();
 
         List<Fornecedor> lista = fornecedorDAO.listarTodos();
@@ -55,6 +55,17 @@ public class FornecedorDAOTest {
         boolean registroExcluido = fornecedorDAO.excluir(lista.get(lista.size()-1));;
 
         Assert.assertTrue(registroExcluido);
+    }
+
+    @Test
+    public void testListarTodosFornecedores() {
+        IDAO fornecedorDAO = new FornecedorDAO();
+
+        List<Fornecedor> listaFornecedores = fornecedorDAO.listarTodos();
+
+        listaFornecedores.forEach(fornecedores -> System.out.println(fornecedores));
+
+        Assert.assertTrue(listaFornecedores.size() > 0);
     }
 
 }
