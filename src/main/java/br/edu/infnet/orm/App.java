@@ -1,6 +1,9 @@
 package br.edu.infnet.orm;
 
 import br.edu.infnet.orm.modelo.entidade.Comida;
+import br.edu.infnet.orm.modelo.entidade.Fornecedor;
+import br.edu.infnet.orm.modelo.persistencia.FornecedorDAO;
+import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import br.edu.infnet.orm.modelo.persistencia.ProdutoDAO;
 
 /**
@@ -28,7 +31,7 @@ public class App {
 //		}
 //    	
 		
-		ProdutoDAO dao = new ProdutoDAO();
+		//ProdutoDAO dao = new ProdutoDAO();
 //		Produto produto = new Produto();
 //		produto.setCodigo(10);
 //		produto.setNome("Suco de Laranja");
@@ -47,15 +50,19 @@ public class App {
 //		sobremesa.setValor(15);
 //		sobremesa.setNome("Sorvete");
 		
-		Comida comida = new Comida();
+		/*Comida comida = new Comida();
 		comida.setCodigo(98);
 		comida.setNome("Bife");
 		comida.setVegano(true);
 		
-		dao.salvar(comida);
-		
-		
-		
+		dao.salvar(comida);*/
+
+
+		IDAO dao = new FornecedorDAO();
+		Fornecedor fornecedor = new Fornecedor("Luciano Keunecke");
+
+		dao.salvar(fornecedor);
+
 
 	}
 }
