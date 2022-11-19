@@ -6,6 +6,7 @@ import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 public class FornecedorDAOTest {
 
@@ -27,6 +28,7 @@ public class FornecedorDAOTest {
     }
 
     @Test
+    @DisplayName("Testando a inclusão do fornecedor")
     public void testIncluir() {
         IDAO fornecedorDAO = new FornecedorDAO();
         Fornecedor fornecedor = new Fornecedor("Maquinas Omil", "35.417.536/0001-91", "Rua Dr Getulio Vargas", 3563, "", "Bela Vista", 89140000, "Ibirama");
