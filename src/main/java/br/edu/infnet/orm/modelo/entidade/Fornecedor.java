@@ -22,6 +22,10 @@ public class Fornecedor {
     private long numeroCep;
     private String nomeCidade;
 
+    public Fornecedor() {
+
+    }
+
     public Fornecedor(String nome, String cnpjCpf, String endereco, long numeroEndereco, String complementoEndereco, String bairro, long numeroCep, String nomeCidade) {
         this.nome = nome;
         this.cnpjCpf = cnpjCpf;
@@ -43,10 +47,6 @@ public class Fornecedor {
         this.bairro = bairro;
         this.numeroCep = numeroCep;
         this.nomeCidade = nomeCidade;
-    }
-
-    public Fornecedor() {
-
     }
 
     public Long getId() {

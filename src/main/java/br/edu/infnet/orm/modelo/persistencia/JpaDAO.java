@@ -1,7 +1,6 @@
 package br.edu.infnet.orm.modelo.persistencia;
 
 import java.lang.reflect.ParameterizedType;
-import java.nio.channels.ScatteringByteChannel;
 import java.util.List;
 
 import jakarta.persistence.EntityManager;
