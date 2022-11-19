@@ -49,10 +49,18 @@ public abstract class JpaDAO<T>  implements IDAO<T>{
 	}
 
 	@Override
-	public void excluir(T t) {
-		em.getTransaction().begin();
-		em.remove(t);
-		em.getTransaction().commit();
+	public Boolean excluir(T t) {
+		try {
+			em.getTransaction().begin();
+			em.remove(t);
+			em.getTransaction().commit();
+
+			return true;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 	@Override

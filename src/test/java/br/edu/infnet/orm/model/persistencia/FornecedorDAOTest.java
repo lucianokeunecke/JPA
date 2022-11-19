@@ -46,4 +46,15 @@ public class FornecedorDAOTest {
         Assert.assertTrue(registroAlterado);
     }
 
+    @Test
+    public void testExcluir() {
+        IDAO fornecedorDAO = new FornecedorDAO();
+
+        List<Fornecedor> lista = fornecedorDAO.listarTodos();
+
+        boolean registroExcluido = fornecedorDAO.excluir(lista.get(lista.size()-1));;
+
+        Assert.assertTrue(registroExcluido);
+    }
+
 }

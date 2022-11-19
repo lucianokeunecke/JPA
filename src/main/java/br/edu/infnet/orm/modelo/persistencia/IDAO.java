@@ -8,7 +8,7 @@ public interface IDAO<T> {
 
 	Boolean alterar(T t);
 
-	void excluir(T t);
+	Boolean excluir(T t);
 
 	T buscarPeloId(Long id);
 
