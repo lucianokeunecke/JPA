@@ -20,11 +20,11 @@ public abstract class JpaDAO<T>  implements IDAO<T>{
 
 	@Override
 	public Boolean incluir(T t) {
-
 		try {
 			em.getTransaction().begin();
 			em.persist(t);
 			em.getTransaction().commit();
+
 			return true;
 		}
 		catch (Exception e) {
@@ -34,10 +34,18 @@ public abstract class JpaDAO<T>  implements IDAO<T>{
 	}
 
 	@Override
-	public void alterar(T t) {
-		em.getTransaction().begin();
-		em.merge(t);
-		em.getTransaction().commit();
+	public Boolean alterar(T t) {
+		try {
+			em.getTransaction().begin();
+			em.merge(t);
+			em.getTransaction().commit();
+
+			return true;
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
 	}
 
 	@Override
@@ -53,7 +61,7 @@ public abstract class JpaDAO<T>  implements IDAO<T>{
 	}
 
 	@Override
-	public List<T> listaTodos() {
+	public List<T> listarTodos() {
 		return em.createQuery("from " + entityClass.getName()).getResultList();
 	}
 

@@ -33,4 +33,23 @@ public class Fornecedor {
         this.nomeCidade = nomeCidade;
     }
 
+    public Fornecedor(Long id, String nome, String cnpjCpf, String endereco, long numeroEndereco, String complementoEndereco, String bairro, long numeroCep, String nomeCidade) {
+        this.id = id;
+        this.nome = nome;
+        this.cnpjCpf = cnpjCpf;
+        this.endereco = endereco;
+        this.numeroEndereco = numeroEndereco;
+        this.complementoEndereco = complementoEndereco;
+        this.bairro = bairro;
+        this.numeroCep = numeroCep;
+        this.nomeCidade = nomeCidade;
+    }
+
+    public Fornecedor() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

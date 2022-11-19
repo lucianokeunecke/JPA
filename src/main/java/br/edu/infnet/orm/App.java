@@ -1,8 +1,12 @@
 package br.edu.infnet.orm;
 
 import br.edu.infnet.orm.modelo.entidade.Fornecedor;
+import br.edu.infnet.orm.modelo.entidade.Produto;
 import br.edu.infnet.orm.modelo.persistencia.FornecedorDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
+import br.edu.infnet.orm.modelo.persistencia.ProdutoDAO;
+
+import java.util.List;
 
 /**
  * Hello world!
@@ -30,15 +34,16 @@ public class App {
 //    	
 		
 		//ProdutoDAO dao = new ProdutoDAO();
-//		Produto produto = new Produto();
-//		produto.setCodigo(10);
-//		produto.setNome("Suco de Laranja");
-//		produto.setValor(12);
-//		dao.salvar(produto);
-//		Produto produto = dao.obter(1l);
-//		System.out.println(produto);
-//		List<Produto> listaTodos = dao.listaTodos();
-//		System.out.println(listaTodos);
+		//Produto produto;
+		/*Produto produto = new Produto();
+		produto.setCodigo(10);
+		produto.setNome("Suco de Laranja");
+		produto.setValor(12);
+		dao.incluir(produto);*/
+		//produto = dao.buscarPeloId(1l);
+		//System.out.println(produto);
+		//List<Produto> listaTodos = dao.listaTodos();
+		//System.out.println(listaTodos);
 		
 //		Sobremesa sobremesa = new Sobremesa();
 //		sobremesa.setCodigo(54345);

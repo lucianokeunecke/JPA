@@ -6,12 +6,12 @@ public interface IDAO<T> {
 
 	Boolean incluir(T t);
 
-	void alterar(T t);
+	Boolean alterar(T t);
 
 	void excluir(T t);
 
 	T buscarPeloId(Long id);
 
-	List<T> listaTodos();
+	List<T> listarTodos();
 
 }

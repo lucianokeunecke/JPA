@@ -6,7 +6,8 @@ import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
+
+import java.util.List;
 
 public class FornecedorDAOTest {
 
@@ -28,13 +29,21 @@ public class FornecedorDAOTest {
     }
 
     @Test
-    @DisplayName("Testando a inclusão do fornecedor")
     public void testIncluir() {
         IDAO fornecedorDAO = new FornecedorDAO();
         Fornecedor fornecedor = new Fornecedor("Maquinas Omil", "35.417.536/0001-91", "Rua Dr Getulio Vargas", 3563, "", "Bela Vista", 89140000, "Ibirama");
 
-        boolean validacao = fornecedorDAO.incluir(fornecedor);
-        Assert.assertTrue(validacao);
+        boolean registroIncluido = fornecedorDAO.incluir(fornecedor);
+        Assert.assertTrue(registroIncluido);
+    }
+
+    @Test
+    public void testAlterar() {
+        IDAO fornecedorDAO = new FornecedorDAO();
+        List<Fornecedor> listaTodos = fornecedorDAO.listarTodos();
+        Fornecedor fornecedor = new Fornecedor( listaTodos.get(0).getId(), "Teste Alteração do Fornecedor", "13.219.981/0001-04", "Teste Alteracao do Endereco", 1234, "Teste Alteracao Complemento", "Teste Alteracao Bairro", 12345678, "Teste Alteracao da Cidade");
+        boolean registroAlterado = fornecedorDAO.alterar(fornecedor);
+        Assert.assertTrue(registroAlterado);
     }
 
 }
