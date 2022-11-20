@@ -28,7 +28,32 @@ public class Empenho {
         this.processoLicitatorio = processoLicitatorio;
     }
 
+    public Empenho(Long id, Long numero, LocalDate data, float valor, Fornecedor fornecedor, ProcessoLicitatorio processoLicitatorio) {
+        this.id = id;
+        this.numero = numero;
+        this.data = data;
+        this.valor = valor;
+        this.fornecedor = fornecedor;
+        this.processoLicitatorio = processoLicitatorio;
+    }
+
     public Empenho() {
 
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Empenho{" +
+                "id=" + id +
+                ", numero=" + numero +
+                ", data=" + data +
+                ", valor=" + valor +
+                ", fornecedor=" + fornecedor +
+                ", processoLicitatorio=" + processoLicitatorio +
+                '}';
     }
 }
