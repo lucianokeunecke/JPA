@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -33,11 +34,27 @@ public class EmpenhoDAOTest {
         return concorrenciaDAO.buscarPeloId(listaConcorrencias.get(gerador.nextInt(listaConcorrencias.size())).getId());
     }
 
+    private Object retornarUmProdutoAleatorio() {
+
+        Random gerador = new Random();
+
+        IDAO produtoDAO = new ProdutoDAO();
+
+        List<Produto> listaprodutos = produtoDAO.listarTodos();
+
+        return produtoDAO.buscarPeloId(listaprodutos.get(gerador.nextInt(listaprodutos.size())).getId());
+    }
+
     @Test
     public void incluir() {
         IDAO empenhoDAO = new EmpenhoDAO();
 
         Empenho empenho = new Empenho( 101L, LocalDate.now(), 35000F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
+
+        empenho.setItensEmpenho(new ArrayList<>());
+		empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 10F, 13F));
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3F, 5.5F));
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 4F, 9.75F));
 
         boolean registroIncluido = empenhoDAO.incluir(empenho);
 

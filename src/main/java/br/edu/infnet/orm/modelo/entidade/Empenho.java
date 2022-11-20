@@ -48,6 +48,14 @@ public class Empenho {
         return id;
     }
 
+    public List<ItensEmpenho> getItensEmpenho() {
+        return itensEmpenho;
+    }
+
+    public void setItensEmpenho(List<ItensEmpenho> itensEmpenho) {
+        this.itensEmpenho = itensEmpenho;
+    }
+
     @Override
     public String toString() {
         return "Empenho{" +

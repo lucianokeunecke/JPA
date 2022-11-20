@@ -14,4 +14,13 @@ public class ItensEmpenho {
     private float quantidade;
     private float valorUnitario;
 
+    public ItensEmpenho(Produto produto, float quantidade, float valorUnitario) {
+        this.produto = produto;
+        this.quantidade = quantidade;
+        this.valorUnitario = valorUnitario;
+    }
+
+    public ItensEmpenho() {
+
+    }
 }
