@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public class ProcessoLicitatorio {
+public abstract  class ProcessoLicitatorio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
