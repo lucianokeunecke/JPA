@@ -38,4 +38,15 @@ public abstract  class ProcessoLicitatorio {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "ProcessoLicitatorio{" +
+                "id=" + id +
+                ", numero=" + numero +
+                ", dataExpedicao=" + dataExpedicao +
+                ", objetoLicitacao='" + objetoLicitacao + '\'' +
+                ", valorEstimadoEdital=" + valorEstimadoEdital +
+                '}';
+    }
 }

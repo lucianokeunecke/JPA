@@ -66,4 +66,15 @@ public class ConcorrenciaDAOTest {
         Assert.assertTrue(registroExcluido);
     }
 
+    @Test
+    public void listarTodasConcorrencias() {
+        IDAO concorrenciaDAO = new ConcorrenciaDAO();
+
+        List<Concorrencia> listaConcorrencias = concorrenciaDAO.listarTodos();
+
+        listaConcorrencias.forEach(concorrencias -> System.out.println(concorrencias));
+
+        Assert.assertTrue(listaConcorrencias.size() > 0);
+    }
+
 }

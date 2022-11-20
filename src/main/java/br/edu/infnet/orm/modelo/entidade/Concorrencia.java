@@ -28,4 +28,13 @@ public class Concorrencia extends ProcessoLicitatorio {
     public Concorrencia() {
 
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Concorrencia{" +
+                "eletronica=" + eletronica +
+                ", prazoExecucao='" + prazoExecucao + '\'' +
+                ", valorMinimoCapital=" + valorMinimoCapital +
+                '}';
+    }
 }
