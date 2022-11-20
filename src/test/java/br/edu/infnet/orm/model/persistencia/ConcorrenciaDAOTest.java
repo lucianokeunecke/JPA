@@ -77,4 +77,17 @@ public class ConcorrenciaDAOTest {
         Assert.assertTrue(listaConcorrencias.size() > 0);
     }
 
+    @Test
+    public void listarPrimeiraConcorrencia() {
+        IDAO concorrenciaDAO = new ConcorrenciaDAO();
+
+        List<Concorrencia> listaConcorrencias = concorrenciaDAO.listarTodos();
+
+        Object concorrencia = concorrenciaDAO.buscarPeloId(listaConcorrencias.get(0).getId());
+
+        System.out.println(concorrencia);
+
+        Assert.assertNotNull(concorrencia);
+    }
+
 }

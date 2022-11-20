@@ -18,7 +18,7 @@ public class Concorrencia extends ProcessoLicitatorio {
         this.valorMinimoCapital = valorMinimoCapital;
     }
 
-    public Concorrencia(int id, int numero, LocalDate dataExpedicao, String objetoLicitacao, float valorEstimadoEdital, boolean eletronica, String prazoExecucao, float valorMinimoCapital) {
+    public Concorrencia(Long id, int numero, LocalDate dataExpedicao, String objetoLicitacao, float valorEstimadoEdital, boolean eletronica, String prazoExecucao, float valorMinimoCapital) {
         super(id, numero, dataExpedicao, objetoLicitacao, valorEstimadoEdital);
         this.eletronica = eletronica;
         this.prazoExecucao = prazoExecucao;

@@ -10,7 +10,7 @@ public abstract  class ProcessoLicitatorio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private int numero;
     private LocalDate dataExpedicao;
     private String objetoLicitacao;
@@ -23,7 +23,7 @@ public abstract  class ProcessoLicitatorio {
         this.valorEstimadoEdital = valorEstimadoEdital;
     }
 
-    public ProcessoLicitatorio(int id, int numero, LocalDate dataExpedicao, String objetoLicitacao, float valorEstimadoEdital) {
+    public ProcessoLicitatorio(Long id, int numero, LocalDate dataExpedicao, String objetoLicitacao, float valorEstimadoEdital) {
         this.id = id;
         this.numero = numero;
         this.dataExpedicao = dataExpedicao;
@@ -35,7 +35,7 @@ public abstract  class ProcessoLicitatorio {
 
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
