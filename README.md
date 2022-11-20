@@ -10,9 +10,9 @@ O Empenho é a etapa em que o governo reserva o dinheiro que será pago quando o
 
 Execute as classes de testes na seguinte ordem:
 
-FornecedorDAOTest
-ProdutoDAOTest
-ConcorrenciaDAOTest
-PregaoDAOTest
-TomadaPrecoTest
-EmpenhoDAOTest
+- FornecedorDAOTest
+- ProdutoDAOTest
+- ConcorrenciaDAOTest
+- PregaoDAOTest
+- TomadaPrecoTest
+- EmpenhoDAOTest
