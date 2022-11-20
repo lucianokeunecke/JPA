@@ -3,6 +3,7 @@ package br.edu.infnet.orm.modelo.entidade;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 public class Empenho {
@@ -19,6 +20,8 @@ public class Empenho {
     @OneToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "idProcessoLicitatorio")
     private ProcessoLicitatorio processoLicitatorio;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<ItensEmpenho> itensEmpenho;
 
     public Empenho(Long numero, LocalDate data, float valor, Fornecedor fornecedor, ProcessoLicitatorio processoLicitatorio) {
         this.numero = numero;
