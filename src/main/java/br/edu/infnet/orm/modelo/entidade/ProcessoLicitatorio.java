@@ -16,4 +16,14 @@ public abstract  class ProcessoLicitatorio {
     private String objetoLicitacao;
     private float valorEstimadoEdital;
 
+    public ProcessoLicitatorio(int numero, LocalDate dataExpedicao, String objetoLicitacao, float valorEstimadoEdital) {
+        this.numero = numero;
+        this.dataExpedicao = dataExpedicao;
+        this.objetoLicitacao = objetoLicitacao;
+        this.valorEstimadoEdital = valorEstimadoEdital;
+    }
+
+    public ProcessoLicitatorio() {
+
+    }
 }
