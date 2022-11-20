@@ -1,7 +1,9 @@
 package br.edu.infnet.orm.model.persistencia;
 
 import br.edu.infnet.orm.modelo.entidade.Concorrencia;
+import br.edu.infnet.orm.modelo.entidade.Fornecedor;
 import br.edu.infnet.orm.modelo.persistencia.ConcorrenciaDAO;
+import br.edu.infnet.orm.modelo.persistencia.FornecedorDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,7 +16,7 @@ public class ConcorrenciaDAOTest {
 
     @Before
     public void inicializar() {
-        IDAO concorrenciaDAO = new ConcorrenciaDAO();
+        /*IDAO concorrenciaDAO = new ConcorrenciaDAO();
 
         Concorrencia concorrencia = new Concorrencia(103, LocalDate.now(), "Aquisição de peças/serviços para manutenção na máquina Escavadeira Hidráulca Caterpillar 312CL, utilizada nos serviços da Secretaria Municipal de Obras e Servilços Públicos.", 150000, true, "15/30/45 dias", 500000);
         concorrenciaDAO.incluir(concorrencia);
@@ -26,7 +28,7 @@ public class ConcorrenciaDAOTest {
         concorrenciaDAO.incluir(concorrencia);
 
         concorrencia = new Concorrencia(147, LocalDate.now(), "Contratação do Consórcio para assegurar a realização a gestão do mercado público regional, um espaço destinado a comercialização dos produtos agrícolas.", 275000, true, "45/90 dias", 750000);
-        concorrenciaDAO.incluir(concorrencia);
+        concorrenciaDAO.incluir(concorrencia);*/
     }
 
     @Test
@@ -51,6 +53,17 @@ public class ConcorrenciaDAOTest {
         boolean registroAlterado = concorrenciaDAO.alterar(concorrencia);
 
         Assert.assertTrue(registroAlterado);
+    }
+
+    @Test
+    public void excluirUltimoRegistro() {
+        IDAO concorrenciaDAO = new ConcorrenciaDAO();
+
+        List<Concorrencia> listaConcorrencias = concorrenciaDAO.listarTodos();
+
+        boolean registroExcluido = concorrenciaDAO.excluir(listaConcorrencias.get(listaConcorrencias.size()-1));;
+
+        Assert.assertTrue(registroExcluido);
     }
 
 }
