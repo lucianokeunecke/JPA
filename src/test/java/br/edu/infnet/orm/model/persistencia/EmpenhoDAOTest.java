@@ -55,23 +55,19 @@ public class EmpenhoDAOTest {
         if (listaEmpenhos.size() == 0) {
 
             Empenho empenho = new Empenho( 101L, LocalDate.now(), 1200F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
-
             empenho.setItensEmpenho(new ArrayList<>());
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 1F, 4.5F));
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 2F, 7.36F));
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3F, 12.94F));
-
             empenhoDAO.incluir(empenho);
 
 
             empenho = new Empenho( 102L, LocalDate.now(), 754.35F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
-
             empenho.setItensEmpenho(new ArrayList<>());
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 1.5F, 41.5F));
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 2.5F, 13.74F));
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3.5F, 9.99F));
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 4.5F, 12.01F));
-
             empenhoDAO.incluir(empenho);
         }
     }
@@ -80,12 +76,10 @@ public class EmpenhoDAOTest {
     public void incluir() {
         IDAO empenhoDAO = new EmpenhoDAO();
 
-        Empenho empenho = new Empenho( 101L, LocalDate.now(), 35000F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
-
+        Empenho empenho = new Empenho( 103L, LocalDate.now(), 3570F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
         empenho.setItensEmpenho(new ArrayList<>());
 		empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 10F, 13F));
         empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3F, 5.5F));
-        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 4F, 9.75F));
 
         boolean registroIncluido = empenhoDAO.incluir(empenho);
 
@@ -98,7 +92,15 @@ public class EmpenhoDAOTest {
 
         List<Empenho> listaEmpenhos = empenhoDAO.listarTodos();
 
-        Empenho empenho = new Empenho(listaEmpenhos.get(0).getId(), 121L, LocalDate.now(), 45000F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
+        Empenho empenho = new Empenho(listaEmpenhos.get(0).getId(), 987L, LocalDate.now(), 740.35F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
+        empenho.setItensEmpenho(new ArrayList<>());
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 2F, 3.5F));
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 4F, 4.80F));
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 6F, 7.45F));
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 8F, 5));
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 10F, 15.36F));
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 12F, 9.99F));
+        empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 14F, 25F));
 
         boolean registroAlterado = empenhoDAO.alterar(empenho);
 
