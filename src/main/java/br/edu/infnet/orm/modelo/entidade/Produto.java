@@ -35,4 +35,14 @@ public class Produto {
     public Long getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", codigo=" + codigo +
+                ", descricao='" + descricao + '\'' +
+                ", valor=" + valor +
+                '}';
+    }
 }

@@ -72,4 +72,15 @@ public class ProdutoDAOTest {
         Assert.assertTrue(registroExcluido);
     }
 
+    @Test
+    public void listarTodosProdutos() {
+        IDAO produtoDAO = new ProdutoDAO();
+
+        List<Produto> listaProdutos = produtoDAO.listarTodos();
+
+        listaProdutos.forEach(produtos -> System.out.println(produtos));
+
+        Assert.assertTrue(listaProdutos.size() > 0);
+    }
+
 }
