@@ -3,6 +3,7 @@ package br.edu.infnet.orm.model.persistencia;
 import br.edu.infnet.orm.modelo.entidade.*;
 import br.edu.infnet.orm.modelo.persistencia.*;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
@@ -43,6 +44,36 @@ public class EmpenhoDAOTest {
         List<Produto> listaprodutos = produtoDAO.listarTodos();
 
         return produtoDAO.buscarPeloId(listaprodutos.get(gerador.nextInt(listaprodutos.size())).getId());
+    }
+
+    @Before
+    public void inicializar() {
+        IDAO empenhoDAO = new EmpenhoDAO();
+
+        List<Empenho> listaEmpenhos = empenhoDAO.listarTodos();
+
+        if (listaEmpenhos.size() == 0) {
+
+            Empenho empenho = new Empenho( 101L, LocalDate.now(), 1200F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
+
+            empenho.setItensEmpenho(new ArrayList<>());
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 1F, 4.5F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 2F, 7.36F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3F, 12.94F));
+
+            empenhoDAO.incluir(empenho);
+
+
+            empenho = new Empenho( 102L, LocalDate.now(), 754.35F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
+
+            empenho.setItensEmpenho(new ArrayList<>());
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 1.5F, 41.5F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 2.5F, 13.74F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3.5F, 9.99F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 4.5F, 12.01F));
+
+            empenhoDAO.incluir(empenho);
+        }
     }
 
     @Test
