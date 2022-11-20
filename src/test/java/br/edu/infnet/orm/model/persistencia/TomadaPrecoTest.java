@@ -37,4 +37,15 @@ public class TomadaPrecoTest {
         Assert.assertTrue(registroAlterado);
     }
 
+    @Test
+    public void excluirUltimoRegistro() {
+        IDAO tomadaPrecoDAO = new TomadaPrecoDAO();
+
+        List<TomadaPreco> listaTomadasPrecos = tomadaPrecoDAO.listarTodos();
+
+        boolean registroExcluido = tomadaPrecoDAO.excluir(listaTomadasPrecos.get(listaTomadasPrecos.size()-1));
+
+        Assert.assertTrue(registroExcluido);
+    }
+
 }
