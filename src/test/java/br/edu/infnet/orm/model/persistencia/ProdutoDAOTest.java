@@ -15,7 +15,7 @@ public class ProdutoDAOTest {
 
     @Before
     public void inicializar() {
-        IDAO produtoDAO = new ProdutoDAO();
+        /*IDAO produtoDAO = new ProdutoDAO();
 
         Produto produto = new Produto( 45L, "cloridrato de tramal 50mg, ampola de 1ml", 15.6F);
         produtoDAO.incluir(produto);
@@ -30,7 +30,7 @@ public class ProdutoDAOTest {
         produtoDAO.incluir(produto);
 
         produto = new Produto( 425L, "espátula de inox para resina.", 9.99F);
-        produtoDAO.incluir(produto);
+        produtoDAO.incluir(produto);*/
     }
 
     @Test
@@ -57,5 +57,15 @@ public class ProdutoDAOTest {
         Assert.assertTrue(registroAlterado);
     }
 
+    @Test
+    public void excluirUltimoRegistro() {
+        IDAO produtoDAO = new ProdutoDAO();
+
+        List<Produto> listaProdutos = produtoDAO.listarTodos();
+
+        boolean registroExcluido = produtoDAO.excluir(listaProdutos.get(listaProdutos.size()-1));;
+
+        Assert.assertTrue(registroExcluido);
+    }
 
 }
