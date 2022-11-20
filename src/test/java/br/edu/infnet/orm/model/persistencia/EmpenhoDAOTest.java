@@ -79,4 +79,17 @@ public class EmpenhoDAOTest {
         Assert.assertTrue(listaEmpenhos.size() > 0);
     }
 
+    @Test
+    public void listarPrimeiroEmpenho() {
+        IDAO empenhoDAO = new EmpenhoDAO();
+
+        List<Empenho> listaEmpenhos = empenhoDAO.listarTodos();
+
+        Object empenho = empenhoDAO.buscarPeloId(listaEmpenhos.get(0).getId());
+
+        System.out.println(empenho);
+
+        Assert.assertNotNull(empenho);
+    }
+
 }
