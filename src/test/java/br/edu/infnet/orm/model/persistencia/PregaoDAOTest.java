@@ -70,4 +70,15 @@ public class PregaoDAOTest {
         Assert.assertTrue(registroExcluido);
     }
 
+    @Test
+    public void listarTodosPregoes() {
+        IDAO pregaoDAO = new PregaoDAO();
+
+        List<Pregao> listaPregoes = pregaoDAO.listarTodos();
+
+        listaPregoes.forEach(pregoes -> System.out.println(pregoes));
+
+        Assert.assertTrue(listaPregoes.size() > 0);
+    }
+
 }
