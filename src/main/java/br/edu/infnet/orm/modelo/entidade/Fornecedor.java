@@ -11,9 +11,7 @@ public class Fornecedor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
-
     private String cnpjCpf;
     private String endereco;
     private long numeroEndereco;
