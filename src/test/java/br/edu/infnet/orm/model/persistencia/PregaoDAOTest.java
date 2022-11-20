@@ -1,6 +1,8 @@
 package br.edu.infnet.orm.model.persistencia;
 
+import br.edu.infnet.orm.modelo.entidade.Concorrencia;
 import br.edu.infnet.orm.modelo.entidade.Pregao;
+import br.edu.infnet.orm.modelo.persistencia.ConcorrenciaDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import br.edu.infnet.orm.modelo.persistencia.PregaoDAO;
 import org.junit.Assert;
@@ -8,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Random;
 
 public class PregaoDAOTest {
@@ -15,7 +18,7 @@ public class PregaoDAOTest {
     @Before
     public void inicializar() {
 
-        Random gerador = new Random();
+        /*Random gerador = new Random();
 
         IDAO pregaoDAO = new PregaoDAO();
 
@@ -29,7 +32,7 @@ public class PregaoDAOTest {
         pregaoDAO.incluir(pregao);
 
         pregao = new Pregao(gerador.nextInt(9999), LocalDate.now(), "Execução de obra de construção de cabeceira de ponte na Linha Madoglio e Linha Piccoli com área de 55,00m² cada ponte, conforme memorial descritivo, prancha A-01, A-02 e E-01 e cronograma físico e financeiro.", 185000, true, "Maior Lance ou Oferta", 4);
-        pregaoDAO.incluir(pregao);
+        pregaoDAO.incluir(pregao);*/
     }
 
     @Test
@@ -41,6 +44,30 @@ public class PregaoDAOTest {
         boolean registroIncluido = pregaoDAO.incluir(pregao);
 
         Assert.assertTrue(registroIncluido);
+    }
+
+    @Test
+    public void alterarPrimeiroRegistro() {
+        IDAO pregaoDAO = new PregaoDAO();
+
+        List<Pregao> listaPregoes = pregaoDAO.listarTodos();
+
+        Pregao pregao = new Pregao( listaPregoes.get(0).getId(), 299, LocalDate.now(), "Alteração - Prestação de serviços de engenharia civil.", 199876, true, "Não se Aplica", 11);
+
+        boolean registroAlterado = pregaoDAO.alterar(pregao);
+
+        Assert.assertTrue(registroAlterado);
+    }
+
+    @Test
+    public void excluirUltimoRegistro() {
+        IDAO pregaoDAO = new PregaoDAO();
+
+        List<Pregao> listaPregoes = pregaoDAO.listarTodos();
+
+        boolean registroExcluido = pregaoDAO.excluir(listaPregoes.get(listaPregoes.size()-1));;
+
+        Assert.assertTrue(registroExcluido);
     }
 
 }

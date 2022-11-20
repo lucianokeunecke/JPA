@@ -18,6 +18,13 @@ public class Pregao extends ProcessoLicitatorio {
         this.indiceReajuste = indiceReajuste;
     }
 
+    public Pregao(Long id, int numero, LocalDate dataExpedicao, String objetoLicitacao, float valorEstimadoEdital, boolean registroPreco, String criterioJulgamento, float indiceReajuste) {
+        super(id, numero, dataExpedicao, objetoLicitacao, valorEstimadoEdital);
+        this.registroPreco = registroPreco;
+        this.criterioJulgamento = criterioJulgamento;
+        this.indiceReajuste = indiceReajuste;
+    }
+
     public Pregao() {
 
     }
