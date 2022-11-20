@@ -1,8 +1,6 @@
 package br.edu.infnet.orm.model.persistencia;
 
-import br.edu.infnet.orm.modelo.entidade.Concorrencia;
 import br.edu.infnet.orm.modelo.entidade.TomadaPreco;
-import br.edu.infnet.orm.modelo.persistencia.ConcorrenciaDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import br.edu.infnet.orm.modelo.persistencia.TomadaPrecoDAO;
 import org.junit.Assert;
@@ -79,6 +77,19 @@ public class TomadaPrecoTest {
         listaTomadasPrecos.forEach(tomadasPrecos -> System.out.println(tomadasPrecos));
 
         Assert.assertTrue(listaTomadasPrecos.size() > 0);
+    }
+
+    @Test
+    public void listarPrimeiraTomadaPreco() {
+        IDAO tomadaPrecoDAO = new TomadaPrecoDAO();
+
+        List<TomadaPreco> listaTomadasPrecos = tomadaPrecoDAO.listarTodos();
+
+        Object tomadaPreco = tomadaPrecoDAO.buscarPeloId(listaTomadasPrecos.get(0).getId());
+
+        System.out.println(tomadaPreco);
+
+        Assert.assertNotNull(tomadaPreco);
     }
 
 }
