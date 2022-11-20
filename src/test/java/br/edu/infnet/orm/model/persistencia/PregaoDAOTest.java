@@ -1,8 +1,6 @@
 package br.edu.infnet.orm.model.persistencia;
 
-import br.edu.infnet.orm.modelo.entidade.Concorrencia;
 import br.edu.infnet.orm.modelo.entidade.Pregao;
-import br.edu.infnet.orm.modelo.persistencia.ConcorrenciaDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import br.edu.infnet.orm.modelo.persistencia.PregaoDAO;
 import org.junit.Assert;
