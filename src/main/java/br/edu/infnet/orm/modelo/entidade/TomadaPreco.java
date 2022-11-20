@@ -11,7 +11,14 @@ public class TomadaPreco extends ProcessoLicitatorio {
     private String condicaoPagamento;
     private float valorEstimadoDotacaoOrcamentaria;
 
-    public TomadaPreco(int numero, LocalDate dataExpedicao, String objetoLicitacao, float valorEstimadoEdital) {
+    public TomadaPreco(int numero, LocalDate dataExpedicao, String objetoLicitacao, float valorEstimadoEdital, boolean permiteSubcontratacao, String condicaoPagamento, float valorEstimadoDotacaoOrcamentaria) {
         super(numero, dataExpedicao, objetoLicitacao, valorEstimadoEdital);
+        this.permiteSubcontratacao = permiteSubcontratacao;
+        this.condicaoPagamento = condicaoPagamento;
+        this.valorEstimadoDotacaoOrcamentaria = valorEstimadoDotacaoOrcamentaria;
+    }
+
+    public TomadaPreco() {
+
     }
 }
