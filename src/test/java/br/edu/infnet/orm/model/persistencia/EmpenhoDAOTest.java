@@ -68,4 +68,15 @@ public class EmpenhoDAOTest {
         Assert.assertTrue(registroExcluido);
     }
 
+    @Test
+    public void listarTodosEmpenhos() {
+        IDAO empenhoDAO = new EmpenhoDAO();
+
+        List<Empenho> listaEmpenhos = empenhoDAO.listarTodos();
+
+        listaEmpenhos.forEach(empenhos -> System.out.println(empenhos));
+
+        Assert.assertTrue(listaEmpenhos.size() > 0);
+    }
+
 }

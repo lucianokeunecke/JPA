@@ -52,8 +52,8 @@ public class Empenho {
                 ", numero=" + numero +
                 ", data=" + data +
                 ", valor=" + valor +
-                ", fornecedor=" + fornecedor +
-                ", processoLicitatorio=" + processoLicitatorio +
+                ", " + fornecedor +
+                ", " + processoLicitatorio +
                 '}';
     }
 }
