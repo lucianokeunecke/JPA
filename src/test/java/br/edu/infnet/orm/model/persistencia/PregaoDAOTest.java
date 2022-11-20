@@ -81,4 +81,17 @@ public class PregaoDAOTest {
         Assert.assertTrue(listaPregoes.size() > 0);
     }
 
+    @Test
+    public void listarPrimeiroPregao() {
+        IDAO pregaoDAO = new PregaoDAO();
+
+        List<Pregao> listaPregoes = pregaoDAO.listarTodos();
+
+        Object pregao = pregaoDAO.buscarPeloId(listaPregoes.get(0).getId());
+
+        System.out.println(pregao);
+
+        Assert.assertNotNull(pregao);
+    }
+
 }
