@@ -6,12 +6,34 @@ import br.edu.infnet.orm.modelo.persistencia.ConcorrenciaDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import br.edu.infnet.orm.modelo.persistencia.TomadaPrecoDAO;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Random;
 
 public class TomadaPrecoTest {
+
+    @Before
+    public void inicializar() {
+
+        Random gerador = new Random();
+
+        IDAO tomadaPrecoDAO = new TomadaPrecoDAO();
+
+        TomadaPreco tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Aquisição de veículo de passeio novo para utilização nos serviços da Secretaria Municipal de Educação, Cultura e Esportes.", 97000, false, "A vista", 78000);
+        tomadaPrecoDAO.incluir(tomadaPreco);
+
+        tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Aquisição de gêneros alimentícios para utilização no preparo da merenda escolar em atendimento aos alunos da Educação Básica do Município.", 45000, false, "45/90 dias", 35000);
+        tomadaPrecoDAO.incluir(tomadaPreco);
+
+        tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Locação de Software de informática para controle dos Serviços Prestados.", 160000, true, "20/40/60 dias", 148000);
+        tomadaPrecoDAO.incluir(tomadaPreco);
+
+        tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Contratação de show artístico com duração de 3:30h (três horas e trinta minutos) para o dia 13 de dezembro de 2015 durante as festividades do Natal Luz, tendo como local o Centro de Eventos Vânia Vanzin Casanova.", 35000, true, "180 dias", 225000);
+        tomadaPrecoDAO.incluir(tomadaPreco);
+    }
 
     @Test
     public void testIncluir() {
@@ -46,6 +68,17 @@ public class TomadaPrecoTest {
         boolean registroExcluido = tomadaPrecoDAO.excluir(listaTomadasPrecos.get(listaTomadasPrecos.size()-1));
 
         Assert.assertTrue(registroExcluido);
+    }
+
+    @Test
+    public void listarTodasTomadasPrecos() {
+        IDAO tomadaPrecoDAO = new TomadaPrecoDAO();
+
+        List<TomadaPreco> listaTomadasPrecos = tomadaPrecoDAO.listarTodos();
+
+        listaTomadasPrecos.forEach(tomadasPrecos -> System.out.println(tomadasPrecos));
+
+        Assert.assertTrue(listaTomadasPrecos.size() > 0);
     }
 
 }

@@ -28,4 +28,13 @@ public class TomadaPreco extends ProcessoLicitatorio {
     public TomadaPreco() {
 
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " TomadaPreco{" +
+                "permiteSubcontratacao=" + permiteSubcontratacao +
+                ", condicaoPagamento='" + condicaoPagamento + '\'' +
+                ", valorEstimadoDotacaoOrcamentaria=" + valorEstimadoDotacaoOrcamentaria +
+                '}';
+    }
 }
