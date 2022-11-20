@@ -1,12 +1,8 @@
 package br.edu.infnet.orm;
 
 import br.edu.infnet.orm.modelo.entidade.Fornecedor;
-import br.edu.infnet.orm.modelo.entidade.Produto;
 import br.edu.infnet.orm.modelo.persistencia.FornecedorDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
-import br.edu.infnet.orm.modelo.persistencia.ProdutoDAO;
-
-import java.util.List;
 
 /**
  * Hello world!
