@@ -21,5 +21,18 @@ public class Produto {
         this.valor = valor;
     }
 
+    public Produto(Long id, Long codigo, String descricao, float valor) {
+        this.id = id;
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.valor = valor;
+    }
 
+    public Produto() {
+
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

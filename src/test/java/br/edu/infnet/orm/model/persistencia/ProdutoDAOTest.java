@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 public class ProdutoDAOTest {
 
     @Before
@@ -40,6 +42,19 @@ public class ProdutoDAOTest {
         boolean registroIncluido = produtoDAO.incluir(produto);
 
         Assert.assertTrue(registroIncluido);
+    }
+
+    @Test
+    public void alterarPrimeiroRegistro() {
+        IDAO produtoDAO = new ProdutoDAO();
+
+        List<Produto> listaProdutos = produtoDAO.listarTodos();
+
+        Produto produto = new Produto( listaProdutos.get(0).getId(),  22L, "Alteração - tubo com flanges  pn 25 - l= 5,10 m - dn 300 mm", 16.99F);
+
+        boolean registroAlterado = produtoDAO.alterar(produto);
+
+        Assert.assertTrue(registroAlterado);
     }
 
 
