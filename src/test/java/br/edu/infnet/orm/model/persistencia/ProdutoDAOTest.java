@@ -17,7 +17,7 @@ public class ProdutoDAOTest {
 
         List<Produto> listaProdutos = produtoDAO.listarTodos();
 
-        if (listaProdutos.size() == -1) {
+        if (listaProdutos.size() == 0) {
             Produto produto = new Produto( 45L, "cloridrato de tramal 50mg, ampola de 1ml", 15.6F);
             produtoDAO.incluir(produto);
 

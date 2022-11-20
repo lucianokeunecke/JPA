@@ -20,17 +20,21 @@ public class TomadaPrecoTest {
 
         IDAO tomadaPrecoDAO = new TomadaPrecoDAO();
 
-        TomadaPreco tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Aquisição de veículo de passeio novo para utilização nos serviços da Secretaria Municipal de Educação, Cultura e Esportes.", 97000, false, "A vista", 78000);
-        tomadaPrecoDAO.incluir(tomadaPreco);
+        List<TomadaPreco> listaTomadasPrecos = tomadaPrecoDAO.listarTodos();
 
-        tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Aquisição de gêneros alimentícios para utilização no preparo da merenda escolar em atendimento aos alunos da Educação Básica do Município.", 45000, false, "45/90 dias", 35000);
-        tomadaPrecoDAO.incluir(tomadaPreco);
+        if (listaTomadasPrecos.size() == 0) {
+            TomadaPreco tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Aquisição de veículo de passeio novo para utilização nos serviços da Secretaria Municipal de Educação, Cultura e Esportes.", 97000, false, "A vista", 78000);
+            tomadaPrecoDAO.incluir(tomadaPreco);
 
-        tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Locação de Software de informática para controle dos Serviços Prestados.", 160000, true, "20/40/60 dias", 148000);
-        tomadaPrecoDAO.incluir(tomadaPreco);
+            tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Aquisição de gêneros alimentícios para utilização no preparo da merenda escolar em atendimento aos alunos da Educação Básica do Município.", 45000, false, "45/90 dias", 35000);
+            tomadaPrecoDAO.incluir(tomadaPreco);
 
-        tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Contratação de show artístico com duração de 3:30h (três horas e trinta minutos) para o dia 13 de dezembro de 2015 durante as festividades do Natal Luz, tendo como local o Centro de Eventos Vânia Vanzin Casanova.", 35000, true, "180 dias", 225000);
-        tomadaPrecoDAO.incluir(tomadaPreco);
+            tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Locação de Software de informática para controle dos Serviços Prestados.", 160000, true, "20/40/60 dias", 148000);
+            tomadaPrecoDAO.incluir(tomadaPreco);
+
+            tomadaPreco = new TomadaPreco(gerador.nextInt(9999), LocalDate.now(), "Contratação de show artístico com duração de 3:30h (três horas e trinta minutos) para o dia 13 de dezembro de 2015 durante as festividades do Natal Luz, tendo como local o Centro de Eventos Vânia Vanzin Casanova.", 35000, true, "180 dias", 225000);
+            tomadaPrecoDAO.incluir(tomadaPreco);
+        }
     }
 
     @Test
