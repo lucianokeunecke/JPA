@@ -46,7 +46,7 @@ public class ConcorrenciaDAOTest {
 
         List<Concorrencia> listaConcorrencias = concorrenciaDAO.listarTodos();
 
-        Concorrencia concorrencia = new Concorrencia( 6, 199, LocalDate.now(), "Alteração - Empreitada  global para execução de obra para conclusão  da praça da Av. João Corso, conforme Projeto Nº 4450/13 do departamento de engenharia da AMOSC.", 666000, false, "13 meses", 2500000);
+        Concorrencia concorrencia = new Concorrencia( listaConcorrencias.get(0).getId(), 199, LocalDate.now(), "Alteração - Empreitada  global para execução de obra para conclusão  da praça da Av. João Corso, conforme Projeto Nº 4450/13 do departamento de engenharia da AMOSC.", 666000, false, "13 meses", 2500000);
 
         boolean registroAlterado = concorrenciaDAO.alterar(concorrencia);
 

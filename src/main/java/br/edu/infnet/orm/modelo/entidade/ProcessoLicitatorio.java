@@ -34,4 +34,8 @@ public abstract  class ProcessoLicitatorio {
     public ProcessoLicitatorio() {
 
     }
+
+    public int getId() {
+        return id;
+    }
 }
