@@ -15,4 +15,11 @@ public class Produto {
     private String descricao;
     private float valor;
 
+    public Produto(Long codigo, String descricao, float valor) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.valor = valor;
+    }
+
+
 }
