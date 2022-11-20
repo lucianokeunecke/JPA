@@ -27,8 +27,39 @@ public class FornecedorDAOTest {
             fornecedor = new Fornecedor("Marcos da Silva", "075.976.954-97", "Rua das Palmeiras", 2465, "Apto 103", "Velha Central", 89074280, "Blumenau");
             fornecedorDAO.incluir(fornecedor);
 
-            fornecedor = new Fornecedor("Serralheria do Zeca", "27.291.881/0001-01", "Rua Joinville", 475, "", "Passo Manso", 75965432, "Jaragua do Sul");
+            fornecedor = new Fornecedor("mercantil cristal ltda", "27.291.881/0001-01", "Rua Ibira", 475, "", "Passo Manso", 75965432, "Jaragua do Sul");
             fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("ricardo teixeira de oliveira", "28.291.881/0001-01", "Rua das Flores", 475, "", "Vila Nova", 75965463, "lontras");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("Serralheria do Zeca", "29.291.881/0001-01", "Rua das Missoes", 345, "", "Vila Itoupava", 76965432, "Indaial");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("jauru empresa jornalistica ltda", "30.291.881/0001-01", "Rua Jose Reuter", 34, "", "Ponto Chick", 69965432, "Gaspar");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("roni ivo ratzlaff", "31.291.881/0001-01", "Rua Artur Weise", 87, "", "Santias", 35965432, "Sao Joaquim");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("itaipu auto pecas ltda", "32.291.881/0001-01", "Rua Walter Ideker", 234, "", "Badenfurt", 42965432, "Lages");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("marlene alves pape", "33.291.881/0001-01", "Rua Bernando", 853, "", "Rio Ferro", 33965432, "Rio do Sul");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("tarcila leonida fuchs", "34.291.881/0001-01", "Rua das Ostras", 12, "", "Escola Agricola", 79965432, "Brusque");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("arlindo friedrich", "35.291.881/0001-01", "Rua 1º de Janeiro", 53, "", "Floriano", 67965432, "Itajai");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("blavel  blaut veiculos ltda", "36.291.881/0001-01", "Rua Onze de Outro", 1050, "", "Verde Vale", 15935432, "Florianopolis");
+            fornecedorDAO.incluir(fornecedor);
+
+            fornecedor = new Fornecedor("sertemaq-serv.assist.tec.maq.ltda", "37.291.881/0001-01", "Centro", 3563, "", "Ponta Aguda", 25965432, "Sao Bendo do sul");
+            fornecedorDAO.incluir(fornecedor);
+
         }
     }
 
