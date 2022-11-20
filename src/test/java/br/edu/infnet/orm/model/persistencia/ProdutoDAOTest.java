@@ -1,8 +1,6 @@
 package br.edu.infnet.orm.model.persistencia;
 
-import br.edu.infnet.orm.modelo.entidade.Fornecedor;
 import br.edu.infnet.orm.modelo.entidade.Produto;
-import br.edu.infnet.orm.modelo.persistencia.FornecedorDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import br.edu.infnet.orm.modelo.persistencia.ProdutoDAO;
 import org.junit.Assert;
@@ -81,6 +79,19 @@ public class ProdutoDAOTest {
         listaProdutos.forEach(produtos -> System.out.println(produtos));
 
         Assert.assertTrue(listaProdutos.size() > 0);
+    }
+
+    @Test
+    public void listarPrimeiroProduto() {
+        IDAO produtoDAO = new ProdutoDAO();
+
+        List<Produto> listaProdutos = produtoDAO.listarTodos();
+
+        Object produto = produtoDAO.buscarPeloId(listaProdutos.get(0).getId());
+
+        System.out.println(produto);
+
+        Assert.assertNotNull(produto);
     }
 
 }
