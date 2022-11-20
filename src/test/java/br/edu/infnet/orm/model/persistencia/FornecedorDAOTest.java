@@ -29,7 +29,7 @@ public class FornecedorDAOTest {
     }
 
     @Test
-    public void testIncluir() {
+    public void incluir() {
         IDAO fornecedorDAO = new FornecedorDAO();
 
         Fornecedor fornecedor = new Fornecedor("Maquinas Omil", "35.417.536/0001-91", "Rua Dr Getulio Vargas", 3563, "", "Bela Vista", 89140000, "Ibirama");
@@ -40,7 +40,7 @@ public class FornecedorDAOTest {
     }
 
     @Test
-    public void testAlterarPrimeiroRegistro() {
+    public void alterarPrimeiroRegistro() {
         IDAO fornecedorDAO = new FornecedorDAO();
 
         List<Fornecedor> listaFornecedores = fornecedorDAO.listarTodos();
@@ -53,7 +53,7 @@ public class FornecedorDAOTest {
     }
 
     @Test
-    public void testExcluirUltimoRegistro() {
+    public void excluirUltimoRegistro() {
         IDAO fornecedorDAO = new FornecedorDAO();
 
         List<Fornecedor> listaFornecedores = fornecedorDAO.listarTodos();
@@ -64,7 +64,7 @@ public class FornecedorDAOTest {
     }
 
     @Test
-    public void testListarTodosFornecedores() {
+    public void listarTodosFornecedores() {
         IDAO fornecedorDAO = new FornecedorDAO();
 
         List<Fornecedor> listaFornecedores = fornecedorDAO.listarTodos();
@@ -75,7 +75,7 @@ public class FornecedorDAOTest {
     }
 
     @Test
-    public void testListarPrimeiroFornecedor() {
+    public void listarPrimeiroFornecedor() {
         IDAO fornecedorDAO = new FornecedorDAO();
 
         List<Fornecedor> listaFornecedores = fornecedorDAO.listarTodos();

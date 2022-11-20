@@ -1,15 +1,14 @@
 package br.edu.infnet.orm.model.persistencia;
 
 import br.edu.infnet.orm.modelo.entidade.Concorrencia;
-import br.edu.infnet.orm.modelo.entidade.Fornecedor;
 import br.edu.infnet.orm.modelo.persistencia.ConcorrenciaDAO;
-import br.edu.infnet.orm.modelo.persistencia.FornecedorDAO;
 import br.edu.infnet.orm.modelo.persistencia.IDAO;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class ConcorrenciaDAOTest {
 
@@ -40,4 +39,18 @@ public class ConcorrenciaDAOTest {
 
         Assert.assertTrue(registroIncluido);
     }
+
+    @Test
+    public void alterarPrimeiroRegistro() {
+        IDAO concorrenciaDAO = new ConcorrenciaDAO();
+
+        List<Concorrencia> listaConcorrencias = concorrenciaDAO.listarTodos();
+
+        Concorrencia concorrencia = new Concorrencia( 6, 199, LocalDate.now(), "Alteração - Empreitada  global para execução de obra para conclusão  da praça da Av. João Corso, conforme Projeto Nº 4450/13 do departamento de engenharia da AMOSC.", 666000, false, "13 meses", 2500000);
+
+        boolean registroAlterado = concorrenciaDAO.alterar(concorrencia);
+
+        Assert.assertTrue(registroAlterado);
+    }
+
 }
