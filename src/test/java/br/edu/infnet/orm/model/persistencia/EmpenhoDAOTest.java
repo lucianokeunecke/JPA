@@ -57,4 +57,15 @@ public class EmpenhoDAOTest {
         Assert.assertTrue(registroAlterado);
     }
 
+    @Test
+    public void excluirUltimoRegistro() {
+        IDAO empenhoDAO = new EmpenhoDAO();
+
+        List<Empenho> listaEmpenhos = empenhoDAO.listarTodos();
+
+        boolean registroExcluido = empenhoDAO.excluir(listaEmpenhos.get(listaEmpenhos.size()-1));;
+
+        Assert.assertTrue(registroExcluido);
+    }
+
 }
