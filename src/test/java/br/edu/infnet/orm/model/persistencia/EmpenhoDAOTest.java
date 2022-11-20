@@ -108,7 +108,7 @@ public class EmpenhoDAOTest {
     public void incluir() {
         IDAO empenhoDAO = new EmpenhoDAO();
 
-        Empenho empenho = new Empenho( 103L, LocalDate.now(), 3570F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
+        Empenho empenho = new Empenho( 103L, LocalDate.now(), 3570F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmPregaoAleatorio());
         empenho.setItensEmpenho(new ArrayList<>());
 		empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 10F, 13F));
         empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3F, 5.5F));
