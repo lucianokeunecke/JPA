@@ -7,32 +7,37 @@ import org.junit.Test;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Random;
 
 public class EmpenhoDAOTest {
 
-    private Object retornarFornecedor(int indice) {
+    private Object retornarUmFornecedorAleatorio() {
+
+        Random gerador = new Random();
 
         IDAO fornecedorDAO = new FornecedorDAO();
 
         List<Fornecedor> listaFornecedores = fornecedorDAO.listarTodos();
 
-        return fornecedorDAO.buscarPeloId(listaFornecedores.get(indice).getId());
+        return fornecedorDAO.buscarPeloId(listaFornecedores.get(gerador.nextInt(listaFornecedores.size())).getId());
     }
 
-    private Object retornarConcorrencia(int indice) {
+    private Object retornarUmaConcorrenciaAleatoria() {
+
+        Random gerador = new Random();
 
         IDAO concorrenciaDAO = new ConcorrenciaDAO();
 
         List<Concorrencia> listaConcorrencias = concorrenciaDAO.listarTodos();
 
-        return concorrenciaDAO.buscarPeloId(listaConcorrencias.get(indice).getId());
+        return concorrenciaDAO.buscarPeloId(listaConcorrencias.get(gerador.nextInt(listaConcorrencias.size())).getId());
     }
 
     @Test
     public void incluir() {
         IDAO empenhoDAO = new EmpenhoDAO();
 
-        Empenho empenho = new Empenho( 101L, LocalDate.now(), 35000F, (Fornecedor) retornarFornecedor(1), (ProcessoLicitatorio) retornarConcorrencia(1));
+        Empenho empenho = new Empenho( 101L, LocalDate.now(), 35000F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
 
         boolean registroIncluido = empenhoDAO.incluir(empenho);
 
@@ -45,7 +50,7 @@ public class EmpenhoDAOTest {
 
         List<Empenho> listaEmpenhos = empenhoDAO.listarTodos();
 
-        Empenho empenho = new Empenho(listaEmpenhos.get(0).getId(), 121L, LocalDate.now(), 45000F, (Fornecedor) retornarFornecedor(2), (ProcessoLicitatorio) retornarConcorrencia(3));
+        Empenho empenho = new Empenho(listaEmpenhos.get(0).getId(), 121L, LocalDate.now(), 45000F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
 
         boolean registroAlterado = empenhoDAO.alterar(empenho);
 
