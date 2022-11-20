@@ -35,6 +35,28 @@ public class EmpenhoDAOTest {
         return concorrenciaDAO.buscarPeloId(listaConcorrencias.get(gerador.nextInt(listaConcorrencias.size())).getId());
     }
 
+    private Object retornarUmPregaoAleatorio() {
+
+        Random gerador = new Random();
+
+        IDAO pregaoDAO = new PregaoDAO();
+
+        List<Pregao> listaPregoes = pregaoDAO.listarTodos();
+
+        return pregaoDAO.buscarPeloId(listaPregoes.get(gerador.nextInt(listaPregoes.size())).getId());
+    }
+
+    private Object retornarUmaTomadaPrecoAleatorio() {
+
+        Random gerador = new Random();
+
+        IDAO tomadaPrecoDAO = new TomadaPrecoDAO();
+
+        List<TomadaPreco> listaTomadasPrecos = tomadaPrecoDAO.listarTodos();
+
+        return tomadaPrecoDAO.buscarPeloId(listaTomadasPrecos.get(gerador.nextInt(listaTomadasPrecos.size())).getId());
+    }
+
     private Object retornarUmProdutoAleatorio() {
 
         Random gerador = new Random();
@@ -62,12 +84,22 @@ public class EmpenhoDAOTest {
             empenhoDAO.incluir(empenho);
 
 
-            empenho = new Empenho( 102L, LocalDate.now(), 754.35F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaConcorrenciaAleatoria());
+            empenho = new Empenho( 102L, LocalDate.now(), 754.35F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmPregaoAleatorio());
             empenho.setItensEmpenho(new ArrayList<>());
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 1.5F, 41.5F));
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 2.5F, 13.74F));
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3.5F, 9.99F));
             empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 4.5F, 12.01F));
+            empenhoDAO.incluir(empenho);
+
+            empenho = new Empenho( 103L, LocalDate.now(), 500F, (Fornecedor) retornarUmFornecedorAleatorio(), (ProcessoLicitatorio) retornarUmaTomadaPrecoAleatorio());
+            empenho.setItensEmpenho(new ArrayList<>());
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 3F, 8.5F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 6F, 12.6F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 9F, 29.99F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 12F, 13.79F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 15F, 1.09F));
+            empenho.getItensEmpenho().add(new ItensEmpenho((Produto) retornarUmProdutoAleatorio(), 18F, 5.99F));
             empenhoDAO.incluir(empenho);
         }
     }
