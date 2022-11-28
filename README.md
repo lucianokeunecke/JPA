@@ -14,5 +14,5 @@ Execute as classes de testes na seguinte ordem:
 - ProdutoDAOTest
 - ConcorrenciaDAOTest
 - PregaoDAOTest
-- TomadaPrecoTest
+- TomadaPrecoDAOTest
 - EmpenhoDAOTest

@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
 
-public class TomadaPrecoTest {
+public class TomadaPrecoDAOTest {
 
     @Before
     public void inicializar() {
